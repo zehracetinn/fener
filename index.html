@@ -51,6 +51,37 @@
     #noBtn {
       background-color: #dc3545;
     }
+
+    /* Özel alert kutusu */
+    #customAlert {
+      display: none;
+      position: fixed;
+      top: 30%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-color: black;
+      color: white;
+      padding: 30px 40px;
+      border-radius: 15px;
+      text-align: center;
+      z-index: 1000;
+      box-shadow: 0 0 20px rgba(0,0,0,0.7);
+    }
+
+    #customAlert strong {
+      font-size: 20px;
+    }
+
+    #customAlert button {
+      margin-top: 20px;
+      padding: 10px 20px;
+      background-color: lightgreen;
+      color: black;
+      border: none;
+      border-radius: 8px;
+      font-size: 18px;
+      cursor: pointer;
+    }
   </style>
 </head>
 <body>
@@ -61,12 +92,19 @@
     <button id="noBtn">Hayır</button>
   </div>
 
+  <!-- Özel Alert Kutusu -->
+  <div id="customAlert">
+    <strong>Ömercan Omar'ın mesajı</strong><br><br>
+    ŞAMPİYON OSMANGÜCÜ<br><br>
+    <button onclick="closeAlert()">Tamam</button>
+  </div>
+
   <script>
     const yesBtn = document.getElementById("yesBtn");
     const noBtn = document.getElementById("noBtn");
 
     yesBtn.addEventListener("click", () => {
-      alert("ŞAMPİYON OSMANGÜCÜ");
+      document.getElementById("customAlert").style.display = "block";
     });
 
     noBtn.addEventListener("mouseover", () => {
@@ -76,6 +114,10 @@
       noBtn.style.left = `${x}px`;
       noBtn.style.top = `${y}px`;
     });
+
+    function closeAlert() {
+      document.getElementById("customAlert").style.display = "none";
+    }
   </script>
 
 </body>
