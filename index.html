@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <title>Fenerbahçe Şampiyonluk Anketi</title>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      background: url('Ekran%20Resmi%202025-06-10%2023.24.52.png') no-repeat center center/cover;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      font-family: sans-serif;
+      color: white;
+      text-shadow: 2px 2px 4px #000;
+    }
+
+    h1 {
+      margin-bottom: 40px;
+    }
+
+    button {
+      padding: 15px 30px;
+      font-size: 18px;
+      margin: 10px;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+    }
+
+    #yesBtn {
+      background-color: green;
+      color: white;
+    }
+
+    #noBtn {
+      background-color: red;
+      color: white;
+      position: relative;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Seneye Fenerbahçe şampiyon olur mu?</h1>
+  <div>
+    <button id="yesBtn">Evet</button>
+    <button id="noBtn">Hayır</button>
+  </div>
+
+  <script>
+    const yesBtn = document.getElementById("yesBtn");
+    const noBtn = document.getElementById("noBtn");
+
+    yesBtn.addEventListener("click", () => {
+      alert("ŞAMPİYON OSMANGÜCÜ");
+    });
+
+    noBtn.addEventListener("mouseover", () => {
+      const randX = Math.floor(Math.random() * 300) - 150;
+      const randY = Math.floor(Math.random() * 300) - 150;
+      noBtn.style.transform = `translate(${randX}px, ${randY}px)`;
+    });
+  </script>
+
+</body>
+</html>
