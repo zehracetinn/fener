@@ -2,50 +2,61 @@
 <html lang="tr">
 <head>
   <meta charset="UTF-8">
-  <title>Fenerbahçe Şampiyonluk Anketi</title>
+  <title>Fenerbahçe Anket</title>
   <style>
     body {
       margin: 0;
+      padding: 0;
       height: 100vh;
-      background: url('Ekran%20Resmi%202025-06-10%2023.24.52.png') no-repeat center center/cover;
+      background: url("soccer-fenerbahce-s-k-emblem-logo-hd-wallpaper-preview.jpg") no-repeat center center fixed;
+      background-size: cover;
       display: flex;
       flex-direction: column;
-      justify-content: center;
       align-items: center;
-      font-family: sans-serif;
-      color: white;
-      text-shadow: 2px 2px 4px #000;
+      justify-content: center;
+      font-family: Arial, sans-serif;
     }
 
-    h1 {
+    .question {
+      background-color: rgba(0, 0, 0, 0.6);
+      color: white;
+      padding: 20px 40px;
+      border-radius: 15px;
+      font-size: 28px;
+      font-weight: bold;
+      text-align: center;
       margin-bottom: 40px;
     }
 
+    .buttons {
+      display: flex;
+      gap: 30px;
+    }
+
     button {
+      font-size: 22px;
       padding: 15px 30px;
-      font-size: 18px;
-      margin: 10px;
       border: none;
-      border-radius: 10px;
+      border-radius: 12px;
+      color: white;
       cursor: pointer;
+      transition: 0.3s ease;
+      position: relative;
     }
 
     #yesBtn {
-      background-color: green;
-      color: white;
+      background-color: #28a745;
     }
 
     #noBtn {
-      background-color: red;
-      color: white;
-      position: relative;
+      background-color: #dc3545;
     }
   </style>
 </head>
 <body>
 
-  <h1>Seneye Fenerbahçe şampiyon olur mu?</h1>
-  <div>
+  <div class="question">Fenerbahçe şampiyon olur mu seneye?</div>
+  <div class="buttons">
     <button id="yesBtn">Evet</button>
     <button id="noBtn">Hayır</button>
   </div>
@@ -59,9 +70,11 @@
     });
 
     noBtn.addEventListener("mouseover", () => {
-      const randX = Math.floor(Math.random() * 300) - 150;
-      const randY = Math.floor(Math.random() * 300) - 150;
-      noBtn.style.transform = `translate(${randX}px, ${randY}px)`;
+      const x = Math.random() * (window.innerWidth - 200);
+      const y = Math.random() * (window.innerHeight - 200);
+      noBtn.style.position = "absolute";
+      noBtn.style.left = `${x}px`;
+      noBtn.style.top = `${y}px`;
     });
   </script>
 
